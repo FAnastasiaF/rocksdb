@@ -222,11 +222,11 @@ Facebook* позволяет создать профиль с фотографи
 Так как rocksdb это библиотека, то можно добавить базу данных для демонстрации следующим кодом, n можно поменять, на желаемое
 ```
 DB* db;
- Options options;
+Options options;
 Status s = DB::Open(options, kDBPath, &db);
 n = 100
 for( int i = 0; i < n; ++i) {
-  s = db->Put(WriteOptions(), ("key" + i), ("value" + i));
+  s = db->Put(WriteOptions(), ("key" + string(i)), ("value" + string(i)));
 }
 ```
 
