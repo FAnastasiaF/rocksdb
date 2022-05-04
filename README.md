@@ -219,7 +219,16 @@ Facebook* позволяет создать профиль с фотографи
 ![Mark Zuckerberg](https://github.com/FAnastasiaF/rocksdb/blob/main/Mark_Zuckerberg_Facebook_page.png)
 
 ### Создайте свои собственные данные для демонстрации работы СУБД. 
-
+Так как rocksdb это библиотека, то можно добавить базу данных для демонстрации следующим кодом, n можно поменять, на желаемое
+```
+DB* db;
+ Options options;
+Status s = DB::Open(options, kDBPath, &db);
+n = 100
+for( int i = 0; i < n; ++i) {
+  s = db->Put(WriteOptions(), ("key" + i), ("value" + i));
+}
+```
 
 ### Как продолжить самостоятельное изучение языка запросов с помощью демобазы. Если демобазы нет, то создайте ее.
 Демобазу и примеры можно найти [тут](https://github.com/facebook/rocksdb/tree/main/examples).
